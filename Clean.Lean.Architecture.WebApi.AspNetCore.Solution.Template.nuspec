@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template</id>
+    <version>0.0.1</version>
+    <description>
+      Clean Lean Architecture WebApi Solution.
+    </description>
+    <authors>Rimaz Mohommed</authors>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+  <files>
+    <file src=".\" exclude="**\bin;**\obj;**\.vs\**" target="src" />
+  </files>
+</package>
