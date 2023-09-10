@@ -11,8 +11,11 @@
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
+    <readme>README.md</readme>
+    <license type="expression">MIT</license>
   </metadata>
   <files>
     <file src=".\" exclude="**\bin;**\obj;**\.vs\**" target="src" />
+    <file src="README.md" target="."/>
   </files>
 </package>
