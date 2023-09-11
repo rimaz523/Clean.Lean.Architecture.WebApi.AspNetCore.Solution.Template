@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template</id>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <description>
       Clean Lean Architecture WebApi Solution.
     </description>
@@ -15,7 +15,7 @@
     <license type="expression">MIT</license>
   </metadata>
   <files>
-    <file src=".\" exclude="**\bin;**\obj;**\.vs\**" target="src" />
+    <file src=".\" exclude="**\bin\**;**\obj\**;**\.vs\**;**\.git\**" target="src" />
     <file src="README.md" target="."/>
   </files>
 </package>
