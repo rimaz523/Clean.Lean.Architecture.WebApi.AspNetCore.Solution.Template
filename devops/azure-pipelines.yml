@@ -29,3 +29,13 @@ stages:
               command: build
               projects: '**/*.sln'
               arguments: '--no-restore --configuration $(buildConfiguration)'
+          - task: NuGetCommand@2
+            displayName: 'Pack the template'
+            inputs:
+              command: pack
+              packagesToPack: '**/*.nuspec'
+              packDestination: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish Artifact: nupkg'
+            inputs:
+              pathtoPublish: '**/*.nupkg'
