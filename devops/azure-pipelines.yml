@@ -38,4 +38,4 @@ stages:
           - task: PublishBuildArtifacts@1
             displayName: 'Publish Artifact: nupkg'
             inputs:
-              pathtoPublish: '**/$(buildConfiguration)/**'
+              pathtoPublish: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)/**'
