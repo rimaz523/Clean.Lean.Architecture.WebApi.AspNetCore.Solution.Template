@@ -1,0 +1,31 @@
+trigger:
+  branches:
+    include:
+      - master
+variables:
+  - template: variables/build.yml
+pool:
+  vmImage: '$(buildVmImage)'
+stages:
+  - stage: 'Build'
+    displayName: 'Build the Clean Lean Architecture template'
+    jobs:
+      - job: 'Build'
+        displayName: 'Build job'
+        steps:
+          - task: UseDotNet@2
+            displayName: 'Install .NET Core SDK'
+            inputs:
+              version: 6.x
+              performMultiLevelLookup: true
+          - task: DotNetCoreCLI@2
+            displayName: Restore
+            inputs:
+              command: 'restore'
+              projects: '**/*.sln'
+          - task: DotNetCoreCLI@2
+            displayName: Build
+            inputs:
+              command: build
+              projects: '**/*.sln'
+              arguments: '--no-restore --configuration $(buildConfiguration)'

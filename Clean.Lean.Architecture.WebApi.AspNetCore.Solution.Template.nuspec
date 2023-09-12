@@ -15,7 +15,7 @@
     <license type="expression">MIT</license>
   </metadata>
   <files>
-    <file src=".\" exclude="**\bin\**;**\obj\**;**\.vs\**;**\.git\**" target="src" />
+    <file src=".\" exclude="**\bin\**;**\obj\**;**\.vs\**;**\.git\**;**\devops\**;**\CONTRIBUTING.md;**\.gitignore" target="src" />
     <file src="README.md" target="."/>
   </files>
 </package>

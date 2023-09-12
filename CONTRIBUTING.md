@@ -8,7 +8,7 @@
 
 ## Developer Setup
 
-Clone the project from the github repo 
+Clone the project from the github repo
 `git clone https://github.com/rimaz523/Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template.git`
 
 Launch the app:
