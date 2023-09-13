@@ -61,3 +61,4 @@ stages:
                     command: push
                     nuGetFeedType: external
                     publishFeedCredentials: $(nuget-connection)
+                    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
