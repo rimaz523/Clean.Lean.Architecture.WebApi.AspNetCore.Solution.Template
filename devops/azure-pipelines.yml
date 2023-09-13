@@ -39,3 +39,17 @@ stages:
             displayName: 'Publish Artifact: nupkg'
             inputs:
               pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+  - stage: 'Deploy'
+    displayName: 'Deploy to Nuget Org'
+    dependsOn: 'Build'
+    variables:
+    - group: 'Nuget Deploy Variables'
+    jobs:
+      - deployment: 'Deploy'
+        environment: 'Nuget Deploy'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                - template: './nuget-deploy-step.yml'
