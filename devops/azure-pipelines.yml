@@ -5,7 +5,7 @@ trigger:
 
 variables:
   - template: variables/build.yml
-  - group: 'Nuget_Deploy_Vars'
+  - template: variables/service-connections.yml
 
 pool:
   vmImage: '$(buildVmImage)'
@@ -60,4 +60,4 @@ stages:
                   inputs:
                     command: push
                     nuGetFeedType: external
-                    publishFeedCredentials: $(nuget-api-key)
+                    publishFeedCredentials: $(nuget-connection)
