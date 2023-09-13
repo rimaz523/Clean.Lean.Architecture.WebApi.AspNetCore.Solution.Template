@@ -1,9 +1,0 @@
-steps:
-- download: current
-  artifact: drop
-- task: NuGetCommand@2
-  displayName: 'NuGet push'
-  inputs:
-    command: push
-    nuGetFeedType: external
-    publishFeedCredentials: $(nuget-api-key)

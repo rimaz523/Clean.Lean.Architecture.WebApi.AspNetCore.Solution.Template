@@ -2,8 +2,11 @@ trigger:
   branches:
     include:
       - master
+
 variables:
   - template: variables/build.yml
+  - group: 'Nuget_Deploy_Vars'
+
 pool:
   vmImage: '$(buildVmImage)'
 stages:
@@ -42,8 +45,6 @@ stages:
   - stage: 'Deploy'
     displayName: 'Deploy to Nuget Org'
     dependsOn: 'Build'
-    variables:
-    - group: 'Nuget Deploy Variables'
     jobs:
       - deployment: 'Deploy'
         environment: 'Nuget Deploy'
@@ -52,4 +53,11 @@ stages:
             deploy:
               steps:
                 - checkout: self
-                - template: './nuget-deploy-step.yml'
+                - download: current
+                  artifact: drop
+                - task: NuGetCommand@2
+                  displayName: 'NuGet push'
+                  inputs:
+                    command: push
+                    nuGetFeedType: external
+                    publishFeedCredentials: $(nuget-api-key)
