@@ -27,6 +27,13 @@ stages:
               command: 'restore'
               projects: '**/*.sln'
           - task: DotNetCoreCLI@2
+            displayName: 'Verify no formatting errors'
+            continueOnError: true
+            inputs:
+              command: 'custom'
+              custom: 'format'
+              arguments: 'clean-lean-arch-dotnet-api-template.sln --verify-no-changes --verbosity detailed'
+          - task: DotNetCoreCLI@2
             displayName: Build
             inputs:
               command: build
