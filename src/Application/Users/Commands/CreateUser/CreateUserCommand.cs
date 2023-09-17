@@ -2,32 +2,31 @@
 using AutoMapper;
 using MediatR;
 
-namespace Application.Users.Commands.CreateUser
+namespace Application.Users.Commands.CreateUser;
+
+public class CreateUserCommand : IRequest<UserDto>
 {
-    public class CreateUserCommand : IRequest<UserDto>
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+}
+
+public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserDto>
+{
+    private readonly IMapper _mapper;
+
+    public CreateUserCommandHandler(IMapper mapper)
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        _mapper = mapper;
     }
 
-    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserDto>
+    public async Task<UserDto> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
-        private readonly IMapper _mapper;
-
-        public CreateUserCommandHandler(IMapper mapper)
+        var user = new UserDto
         {
-            _mapper = mapper;
-        }
-
-        public async Task<UserDto> Handle(CreateUserCommand request, CancellationToken cancellationToken)
-        {
-            var user = new UserDto
-            {
-                Id = Guid.NewGuid(),
-                FirstName = request.FirstName,
-                LastName = request.LastName
-            };
-            return _mapper.Map<UserDto>(user);
-        }
+            Id = Guid.NewGuid(),
+            FirstName = request.FirstName,
+            LastName = request.LastName
+        };
+        return _mapper.Map<UserDto>(user);
     }
 }
