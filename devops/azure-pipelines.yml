@@ -52,6 +52,7 @@ stages:
   - stage: 'Deploy'
     displayName: 'Deploy to Nuget Org'
     dependsOn: 'Build'
+    condition: and (succeeded(), eq(variables['Build.SourceBranchName'], 'master'))
     jobs:
       - deployment: 'Deploy'
         environment: 'Nuget Deploy'
