@@ -1,9 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Polly.Extensions.Http;
-using Polly;
-using Application.Common.Interfaces.ApiServices;
+﻿using Application.Common.Interfaces.ApiServices;
 using Infrastructure.ApiServices;
 using Infrastructure.Common;
+using Microsoft.Extensions.DependencyInjection;
+using Polly;
+using Polly.Extensions.Http;
 
 namespace Infrastructure
 {
