@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* .Net Core 6.0 SDK
+* .Net Core 8.0 SDK
 * Nuget cli (https://learn.microsoft.com/en-us/nuget/install-nuget-client-tools)
 * Nuget Package Explorer (https://apps.microsoft.com/store/detail/nuget-package-explorer/9WZDNCRDMDM3)
 

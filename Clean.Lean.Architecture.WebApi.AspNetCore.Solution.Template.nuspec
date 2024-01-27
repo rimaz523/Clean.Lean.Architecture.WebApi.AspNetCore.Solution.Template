@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template</id>
-    <version>0.5.0</version>
+    <version>8.0.0</version>
     <description>
       Clean Lean Architecture WebApi Solution.
     </description>
