@@ -23,7 +23,7 @@ public class JsonPlaceholderApiService : IJsonPlaceholderApiService
 
     public async Task<User> SaveUser(User user)
     {
-        using HttpResponseMessage response  = await _httpClient.PostAsJsonAsync<User>($"{_options.Value.JsonPlaceholderApiVersion + _options.Value.UserEndpoint}", user);
+        using HttpResponseMessage response = await _httpClient.PostAsJsonAsync<User>($"{_options.Value.JsonPlaceholderApiVersion + _options.Value.UserEndpoint}", user);
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<User>();
     }
