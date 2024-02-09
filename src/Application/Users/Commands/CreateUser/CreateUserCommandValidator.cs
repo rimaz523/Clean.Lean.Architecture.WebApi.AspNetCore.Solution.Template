@@ -5,11 +5,15 @@ public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
 {
     public CreateUserCommandValidator()
     {
-        RuleFor(createUserCommand => createUserCommand.FirstName)
+        RuleFor(createUserCommand => createUserCommand.Name)
         .NotEmpty()
         .MaximumLength(255);
-        RuleFor(createUserCommand => createUserCommand.LastName)
+        RuleFor(createUserCommand => createUserCommand.Username)
         .NotEmpty()
+        .MaximumLength(255);
+        RuleFor(createUserCommand => createUserCommand.Email)
+        .NotEmpty()
+        .EmailAddress()
         .MaximumLength(255);
     }
 }
