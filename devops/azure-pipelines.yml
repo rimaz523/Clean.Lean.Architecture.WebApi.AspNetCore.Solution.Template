@@ -44,10 +44,8 @@ stages:
             inputs:
               command: custom
               arguments: 'pack -NoDefaultExcludes'
-              configuration: $(buildConfiguration)
-              packagesToPack: '**/*.nuspec'
-              packDestination: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
           - task: CopyFiles@2
+            displayName: 'Copy nupkg file to Staging Dir'
             inputs:
               Contents: '**.nupkg'
               targetFolder: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
