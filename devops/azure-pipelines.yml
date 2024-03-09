@@ -42,8 +42,8 @@ stages:
           - task: NuGetCommand@2
             displayName: 'Pack the template'
             inputs:
-              command: pack
-              buildProperties: -NoDefaultExcludes
+              command: custom
+              arguments: 'pack -NoDefaultExcludes'
               packagesToPack: '**/*.nuspec'
               packDestination: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
           - task: PublishBuildArtifacts@1
