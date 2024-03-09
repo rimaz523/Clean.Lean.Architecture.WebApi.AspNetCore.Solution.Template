@@ -47,6 +47,10 @@ stages:
               configuration: $(buildConfiguration)
               packagesToPack: '**/*.nuspec'
               packDestination: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+          - task: CopyFiles@2
+            inputs:
+              Contents: '**.nupkg'
+              targetFolder: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
           - task: PublishBuildArtifacts@1
             displayName: 'Publish Artifact: nupkg'
             inputs:
