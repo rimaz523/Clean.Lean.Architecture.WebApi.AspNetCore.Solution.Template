@@ -19,7 +19,7 @@ stages:
           - task: UseDotNet@2
             displayName: 'Install .NET Core SDK'
             inputs:
-              version: 6.x
+              version: 8.x
               performMultiLevelLookup: true
           - task: DotNetCoreCLI@2
             displayName: Restore
@@ -42,9 +42,13 @@ stages:
           - task: NuGetCommand@2
             displayName: 'Pack the template'
             inputs:
-              command: pack
-              packagesToPack: '**/*.nuspec'
-              packDestination: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+              command: custom
+              arguments: 'pack -NoDefaultExcludes'
+          - task: CopyFiles@2
+            displayName: 'Copy nupkg file to Staging Dir'
+            inputs:
+              Contents: '**.nupkg'
+              targetFolder: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
           - task: PublishBuildArtifacts@1
             displayName: 'Publish Artifact: nupkg'
             inputs:
