@@ -16,7 +16,23 @@ Once installed, create a new solution using the template.
 
 `dotnet new cla-sln --name YourSolutionName`
 
-Launch the app:
+**Launch the app:**
 
 `cd <sln-name>\src\WebApi\`
 `dotnet run`
+
+#### Configure Database
+This solution uses EF Core with SQL Server localDB.
+To switch with your SQL server connection string update the following value in `appsettings.json`, or alternatively you can continue to use localDB.
+<code>
+"Persistence": {
+  "SqlServerConnectionString": "Server=(localdb)\\mssqllocaldb;Database=clean-app-db;Trusted_Connection=True;MultipleActiveResultSets=true"
+}</code>
+
+**To run a database migration**
+`dotnet ef migrations add "MyMigrationName" --project .\src\Infrastructure\ --startup-project .\src\WebApi\`
+
+**To update your database with schema updates**
+`dotnet ef database update --project .\src\WebApi\WebApi.csproj`
+
+**Note** that you might need to install dotnet ef tools first before you run db migrations and updates : `dotnet tool install --global dotnet-ef`
