@@ -2,37 +2,69 @@
 
 [![Build Status](https://dev.azure.com/rimazmohommed523/Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template/_apis/build/status%2FClean.Lean.Architecture.WebApi.Template?branchName=master)](https://dev.azure.com/rimazmohommed523/Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template/_build/latest?definitionId=22&branchName=master)
 
-### Summary
+#### Summary
 The objective of this .NET Core template is to expedite the process for developers to swiftly establish a .NET Core Web API project that adheres to clean architecture principles.
 
-If you find this project useful, please give it a star on [github](https://github.com/rimaz523/Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template). Thanks! ⭐
+#### This templates currently provides you the following out of the box :
+- A dotnet core 8.0 solution built using clean architecture principles.
+- Mediatr pipeline with logging, error handling and validation implemented as cross-cutting concerns
+- FluentValidation for validating api inputs
+- API integration with a 3rd party (https://jsonplaceholder.typicode.com) using HttpClient & Polly for retries.
+- Efcore Sql Server implementation with localdb.
+- An .editorconfig file for defining consistent code styles
 
-### Getting Started
-The easiest way to get started is to install the .NET template:
 
-`dotnet new install Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template`
+**If you find this project useful, please give it a star on [github](https://github.com/rimaz523/Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template). Thanks! ⭐**
+
+#### Prerequisites
+- .NET 8.0 SDK (https://dotnet.microsoft.com/en-us/download)
+- Optionally Visual Studio 2022 or above (https://visualstudio.microsoft.com/downloads/)
+
+#### Getting Started
+One of the most straightforward methods to begin is by installing this .NET template using your command line.
+```bash
+dotnet new install Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template
+```
 
 Once installed, create a new solution using the template.
+```bash
+dotnet new cla-sln --name YourSolutionName
+```
 
-`dotnet new cla-sln --name YourSolutionName`
+#### Launch the app:
+To launch your app, first move to the WebApi project in your solution.
+```bash
+cd <sln-name>\src\WebApi\
+```
+Then run the app
+```bash
+dotnet run
+```
+![commands to run the app](dotnet_run.png)
 
-**Launch the app:**
+Looking at the command output you can see the app is running on https://localhost:7292
 
-`cd <sln-name>\src\WebApi\`
-`dotnet run`
+Open your browser and go to https://localhost:7292/swagger/ to view your api swagger file.
+
+![swagger](swagger_image.png)
 
 #### Configure Database
 This solution uses EF Core with SQL Server localDB.
-To switch with your SQL server connection string update the following value in `appsettings.json`, or alternatively you can continue to use localDB.
-<code>
+To switch with your SQL server connection string update the **SqlServerConnectionString** value in `appsettings.json`, or alternatively you can continue to use localDB.
+
+```bash
 "Persistence": {
   "SqlServerConnectionString": "Server=(localdb)\\mssqllocaldb;Database=clean-app-db;Trusted_Connection=True;MultipleActiveResultSets=true"
-}</code>
+}
+```
 
 **To run a database migration**
-`dotnet ef migrations add "MyMigrationName" --project .\src\Infrastructure\ --startup-project .\src\WebApi\`
-
+```bash
+dotnet ef migrations add "MyMigrationName" --project .\src\Infrastructure\ --startup-project .\src\WebApi\
+```
 **To update your database with schema updates**
-`dotnet ef database update --project .\src\WebApi\WebApi.csproj`
+```bash
+dotnet ef database update --project .\src\WebApi\
+```
 
 **Note** that you might need to install dotnet ef tools first before you run db migrations and updates : `dotnet tool install --global dotnet-ef`
