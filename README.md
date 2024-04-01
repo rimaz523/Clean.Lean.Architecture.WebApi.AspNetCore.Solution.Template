@@ -40,13 +40,13 @@ Then run the app
 ```bash
 dotnet run
 ```
-![commands to run the app](dotnet_run.png)
+![commands to run the app](https://raw.githubusercontent.com/rimaz523/Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template/master/meta/dotnet_run.png)
 
 Looking at the command output you can see the app is running on https://localhost:7292
 
 Open your browser and go to https://localhost:7292/swagger/ to view your api swagger file.
 
-![swagger](swagger_image.png)
+![swagger](https://raw.githubusercontent.com/rimaz523/Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template/master/meta/swagger_image.png)
 
 #### Configure Database
 This solution uses EF Core with SQL Server localDB.
