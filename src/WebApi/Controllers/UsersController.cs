@@ -22,7 +22,7 @@ public class UsersController : ApiControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<UserDto>> Post(CreateUserCommand command)
+    public async Task<ActionResult<UserDto>> CreateUser(CreateUserCommand command)
     {
         return await Mediator.Send(command);
     }
