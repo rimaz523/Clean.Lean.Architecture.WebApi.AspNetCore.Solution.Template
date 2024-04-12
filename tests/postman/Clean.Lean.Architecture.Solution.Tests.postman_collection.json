@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "85e3609d-d575-49d4-9744-52a90dba278b",
+		"name": "Clean.Lean.Architecture.Solution.Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6795352"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "HealthCheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7292/api/health",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7292",
+							"path": [
+								"api",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BlogPreviews",
+			"item": [
+				{
+					"name": "GetBlogPreviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7292/api/BlogPreviews?limit=5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7292",
+							"path": [
+								"api",
+								"BlogPreviews"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "GetUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7292/api/users?id=2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7292",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Test User\",\r\n  \"username\": \"tuser\",\r\n  \"email\": \"user@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7292/api/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7292",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
