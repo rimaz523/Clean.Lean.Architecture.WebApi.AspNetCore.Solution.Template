@@ -12,6 +12,7 @@ The objective of this .NET Core template is to expedite the process for develope
 - API integration with a 3rd party (https://jsonplaceholder.typicode.com) using HttpClient & Polly for retries.
 - Efcore Sql Server implementation with localdb.
 - An .editorconfig file for defining consistent code styles
+- Husky pre-commit hooks that format code on git commit.
 
 
 **If you find this project useful, please give it a star on [github](https://github.com/rimaz523/Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template). Thanks! ⭐**
@@ -47,6 +48,14 @@ Looking at the command output you can see the app is running on https://localhos
 Open your browser and go to https://localhost:7292/swagger/ to view your api swagger file.
 
 ![swagger](https://raw.githubusercontent.com/rimaz523/Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template/master/meta/swagger_image.png)
+
+#### Configure Husky Pre-commit Hooks
+To install husky, run the following command from the root of your solution
+```bash
+  dotnet husky install
+```
+You will then notice that whenever you commit your code, husky automatically runs `dotnet format` to ensure your coding styles are consistent and fixes and issues for you. You can find the husky hook in the `<root>/.husky/pre-commit` file
+
 
 #### Configure Database
 This solution uses EF Core with SQL Server localDB.
