@@ -6,7 +6,15 @@
       "version": "0.6.4",
       "commands": [
         "husky"
-      ]
+      ],
+      "rollForward": false
+    },
+    "swashbuckle.aspnetcore.cli": {
+      "version": "7.0.0",
+      "commands": [
+        "swagger"
+      ],
+      "rollForward": false
     }
   }
 }
