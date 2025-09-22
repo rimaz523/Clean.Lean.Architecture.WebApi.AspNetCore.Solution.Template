@@ -1,4 +1,5 @@
 ﻿namespace Domain.Entities;
+
 public class BlogPost
 {
     public Guid Id { get; set; }

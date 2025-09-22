@@ -7,6 +7,7 @@ using Infrastructure.Common;
 using Microsoft.Extensions.Options;
 
 namespace Infrastructure.ApiServices;
+
 public class JsonPlaceholderApiService : IJsonPlaceholderApiService
 {
     private readonly HttpClient _httpClient;
