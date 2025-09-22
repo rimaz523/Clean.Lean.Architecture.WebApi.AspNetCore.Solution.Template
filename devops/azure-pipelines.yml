@@ -21,6 +21,7 @@ stages:
             inputs:
               version: 10.x
               performMultiLevelLookup: true
+              includePreviewVersions: true
           - task: DotNetCoreCLI@2
             displayName: Restore
             inputs:
