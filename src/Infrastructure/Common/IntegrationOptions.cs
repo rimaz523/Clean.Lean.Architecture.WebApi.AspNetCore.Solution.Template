@@ -1,4 +1,5 @@
 ﻿namespace Infrastructure.Common;
+
 public class IntegrationOptions
 {
     public string JsonPlaceholderApiDomain { get; set; } = string.Empty;

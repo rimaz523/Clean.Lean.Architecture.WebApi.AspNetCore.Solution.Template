@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Options;
 
 namespace Infrastructure.Common;
+
 public class IntegrationOptionsSetup : IConfigureOptions<IntegrationOptions>
 {
     private const string SectionName = nameof(IntegrationOptions);

@@ -3,6 +3,7 @@ using AutoMapper;
 using MediatR;
 
 namespace Application.BlogPreviews.Queries.GetBlogPreviews;
+
 public class GetBlogPreviewsQuery : IRequest<List<BlogPreviewDto>>
 {
     public int? Limit { get; set; }

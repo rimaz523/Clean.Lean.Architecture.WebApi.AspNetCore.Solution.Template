@@ -2,6 +2,7 @@
 using Domain.Entities;
 
 namespace Application.BlogPreviews.Queries.GetBlogPreviews;
+
 public class BlogPreviewDto : IMapFrom<BlogPost>
 {
     public Guid Id { get; set; }
