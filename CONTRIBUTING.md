@@ -19,7 +19,7 @@ Launch the app:
 ## Creating the nupkg for publishing
 
 * Update the .nuspec file with the new package version
-* Run the following command from the root of your solution : `nuget pack`
+* Run the following command from the root of your solution : `nuget pack -NoDefaultExcludes`
 
 ## Installing the created nupkg file
 
