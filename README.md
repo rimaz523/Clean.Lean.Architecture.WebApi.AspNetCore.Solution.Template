@@ -6,7 +6,7 @@
 The objective of this .NET Core template is to expedite the process for developers to swiftly establish a .NET Core Web API project that adheres to clean architecture principles.
 
 #### This templates currently provides you the following out of the box :
-- A dotnet core 9.0 solution built using clean architecture principles.
+- A dotnet core 10.0 solution built using clean architecture principles.
 - Mediatr pipeline with logging, error handling and validation implemented as cross-cutting concerns
 - FluentValidation for validating api inputs
 - API integration with a 3rd party (https://jsonplaceholder.typicode.com) using HttpClient & Polly for retries.
@@ -18,7 +18,7 @@ The objective of this .NET Core template is to expedite the process for develope
 **If you find this project useful, please give it a star on [github](https://github.com/rimaz523/Clean.Lean.Architecture.WebApi.AspNetCore.Solution.Template). Thanks! ⭐**
 
 #### Prerequisites
-- .NET 9.0 SDK (https://dotnet.microsoft.com/en-us/download)
+- .NET 10.0 SDK (https://dotnet.microsoft.com/en-us/download)
 - Optionally Visual Studio 2022 or above (https://visualstudio.microsoft.com/downloads/)
 
 #### Getting Started

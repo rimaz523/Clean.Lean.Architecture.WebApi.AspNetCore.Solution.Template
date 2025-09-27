@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.4",
   "info": {
     "title": "WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
     "version": "1.0"
