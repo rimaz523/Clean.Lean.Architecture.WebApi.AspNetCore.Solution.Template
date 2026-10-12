@@ -1,6 +1,4 @@
-﻿using Domain.Entities;
-
-namespace Application.Common.Interfaces.ApiServices;
+﻿namespace Application.Common.Interfaces.ApiServices;
 
 public interface IJsonPlaceholderApiService
 {

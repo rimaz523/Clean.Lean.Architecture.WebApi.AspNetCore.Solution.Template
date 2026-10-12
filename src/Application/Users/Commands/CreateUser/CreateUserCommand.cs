@@ -1,8 +1,5 @@
 ﻿using Application.Common.Interfaces.ApiServices;
 using Application.Users.Queries.GetUserById;
-using AutoMapper;
-using Domain.Entities;
-using MediatR;
 
 namespace Application.Users.Commands.CreateUser;
 
