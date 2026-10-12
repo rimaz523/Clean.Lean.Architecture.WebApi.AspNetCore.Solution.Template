@@ -1,6 +1,4 @@
 ﻿using Application.Common.Interfaces.ApiServices;
-using AutoMapper;
-using MediatR;
 
 namespace Application.Users.Queries.GetUserById;
 

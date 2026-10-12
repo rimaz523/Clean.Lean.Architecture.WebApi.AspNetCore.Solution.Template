@@ -1,5 +1,4 @@
 ﻿using Application.Common.Mappings;
-using Domain.Entities;
 
 namespace Application.BlogPreviews.Queries.GetBlogPreviews;
 

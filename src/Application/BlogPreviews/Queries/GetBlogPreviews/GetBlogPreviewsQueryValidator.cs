@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Application.BlogPreviews.Queries.GetBlogPreviews;
+﻿namespace Application.BlogPreviews.Queries.GetBlogPreviews;
 
 public class GetBlogPreviewsQueryValidator : AbstractValidator<GetBlogPreviewsQuery>
 {
