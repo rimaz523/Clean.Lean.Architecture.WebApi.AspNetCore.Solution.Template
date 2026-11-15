@@ -6,6 +6,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <!-- SQL Server LocalDB ships x64-only native binaries (SqlUserInstance.dll), which an ARM64 process cannot load.
+       On Windows ARM64 run the API as x64 (emulated) so (localdb) connections work. Requires the x64 .NET runtime. -->
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT' And '$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'Arm64' And '$(RuntimeIdentifier)' == ''">
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <!-- Keep the IL AnyCPU so the (ARM64) swagger CLI used at build time can still load WebApi.dll; only the apphost is x64. -->
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" >
       <PrivateAssets>all</PrivateAssets>
