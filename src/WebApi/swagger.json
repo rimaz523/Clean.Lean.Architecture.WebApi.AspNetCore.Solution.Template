@@ -226,5 +226,16 @@
         "additionalProperties": false
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "BlogPreviews"
+    },
+    {
+      "name": "Health"
+    },
+    {
+      "name": "Users"
+    }
+  ]
 }
