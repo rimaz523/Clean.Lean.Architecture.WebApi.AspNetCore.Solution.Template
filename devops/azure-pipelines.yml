@@ -26,19 +26,19 @@ stages:
             displayName: Restore
             inputs:
               command: 'restore'
-              projects: '**/*.sln'
+              projects: '**/*.slnx'
           - task: DotNetCoreCLI@2
             displayName: 'Verify no formatting errors'
             continueOnError: true
             inputs:
               command: 'custom'
               custom: 'format'
-              arguments: 'clean-lean-arch-dotnet-api-template.sln --verify-no-changes --verbosity detailed'
+              arguments: 'clean-lean-arch-dotnet-api-template.slnx --verify-no-changes --verbosity detailed'
           - task: DotNetCoreCLI@2
             displayName: Build
             inputs:
               command: build
-              projects: '**/*.sln'
+              projects: '**/*.slnx'
               arguments: '--no-restore --configuration $(buildConfiguration)'
           - task: NuGetCommand@2
             displayName: 'Pack the template'
