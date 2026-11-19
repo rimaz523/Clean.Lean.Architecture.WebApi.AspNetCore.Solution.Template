@@ -24,4 +24,4 @@ NC="\033[0m"
 
 # format backend backend dotnet
 echo -e "${GREEN}formatting dotnet code${NC}"
-dotnet format clean-lean-arch-dotnet-api-template.sln --verbosity detailed
+dotnet format clean-lean-arch-dotnet-api-template.slnx --verbosity detailed
