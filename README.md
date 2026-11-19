@@ -9,7 +9,7 @@ The objective of this .NET Core template is to expedite the process for develope
 - A dotnet core 10.0 solution built using clean architecture principles.
 - Mediatr pipeline with logging, error handling and validation implemented as cross-cutting concerns
 - FluentValidation for validating api inputs
-- API integration with a 3rd party (https://jsonplaceholder.typicode.com) using HttpClient & Polly for retries.
+- API integration with a 3rd party (https://jsonplaceholder.typicode.com) using HttpClient & Microsoft.Extensions.Http.Resilience for retries.
 - Efcore Sql Server implementation with localdb.
 - An .editorconfig file for defining consistent code styles
 - Husky pre-commit hooks that format code on git commit.
